@@ -1,0 +1,19 @@
+from itertools import permutations
+
+def is_valid_input(digit1, digit2, digit3):
+	return all(0 <= digit <= 9 for digit in (digit1, digit2, digit3))
+
+try:
+	d1 = int(input("digit1 (0-9): "))
+	d2 = int(input("digit2 (0-9): "))
+	d3 = int(input("digit3 (0-9): "))
+
+	if is_valid_input(d1, d2, d3):
+		combs = permutations([d1, d2, d3])
+		for comb in combs:
+			print("".join(map(str,comb)))
+	else:
+		print("Invalid")
+
+except ValueError:
+	print("Invalid")
