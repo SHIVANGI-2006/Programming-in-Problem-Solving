@@ -1,0 +1,11 @@
+sentence = input("")
+
+punctuations = '''!()-[]{};:'"\,<>./?@#$^&*_~'''
+
+clean_sentence =""
+
+for char in sentence:
+	if char not in punctuations:
+		clean_sentence += char
+
+print(clean_sentence.replace(" ", " "))
